@@ -68,12 +68,12 @@ class RemoteLogger {
 
 
 
-char* ssid     = "ATT392";
-const char* password = "3038544055";
+char* ssid     = "XT1095-ahmed"; //"ATT392";
+const char* password = "ahmed1234"; //"8088544055";
  
 const char* host = "www.adafruit.com";
  WiFiServer server(80);
- RemoteLogger* logger;
+// RemoteLogger* logger;
  char* uintToCharPtr(uint32_t x, char* buf)
  {
     snprintf(buf, sizeof buf, "%lu", (unsigned long)x);
@@ -92,7 +92,7 @@ void setup() {
   }
  
     server.begin();
-    logger = new RemoteLogger("192.168.1.76",1337);
+  //  logger = new RemoteLogger("192.168.1.76",1337);
    // logger->log("hello");
     ////Serial.print("Connected to wifi. My address:");
     IPAddress ipAddr = WiFi.localIP();
@@ -104,11 +104,11 @@ void setup() {
     char thirdOctate[4];
     char fourthOctate[4];
     char ip[16];
-    snprintf(ip, sizeof ip, "%lu.%lu.%lu.%lu", (unsigned long)ipAddr[0],(unsigned long)ipAddr[1],(unsigned long)ipAddr[2],(unsigned long)ipAddr[3]);
-   // uintToCharPtr(ipAddr[0],firstOctate);
-    //uintToCharPtr(ipAddr[1],secondOctate);
-    //uintToCharPtr(ipAddr[2],thirdOctate);
-    //uintToCharPtr(ipAddr[3],fourthOctate);
+  //  snprintf(ip, sizeof ip, "%lu.%lu.%lu.%lu", (unsigned long)ipAddr[0],(unsigned long)ipAddr[1],(unsigned long)ipAddr[2],(unsigned long)ipAddr[3]);
+  /*  uintToCharPtr(ipAddr[0],firstOctate);
+    uintToCharPtr(ipAddr[1],secondOctate);
+    uintToCharPtr(ipAddr[2],thirdOctate);
+    uintToCharPtr(ipAddr[3],fourthOctate);
 
     char logData[400];
     
@@ -121,7 +121,7 @@ void setup() {
    strcat(logData,".");
    strcat(logData,fourthOctate);
 
-     logger->log(logData);
+     logger->log(logData);*/
 }
  
 int value = 0;
